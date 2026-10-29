@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f3ee">
+<meta name="description" content="Union of Liberian Footballers — Unity, Dignity, and Welfare.">
+<title>ULF | Union of Liberian Footballers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#f5f3ee;
+  --white:#fff;
+  --maroon:#701f35;
+  --maroon-dark:#4e1425;
+  --gold:#b7955c;
+  --text:#24242a;
+  --muted:#73747a;
+  --line:#e7e2d9;
+}
+
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text)}
+a {text-decoration:none;color:inherit}
+.container {width:86%;max-width:1200px;margin:auto}
+h1,h2,h3 {font-family:"Barlow Condensed",sans-serif;text-transform:uppercase}
+.eyebrow {font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--gold)}
+.section {padding:85px 0}
+.section-title {font-size:clamp(40px,6vw,65px);line-height:.95;margin:15px 0}
+.section-intro {max-width:600px;color:var(--muted);font-size:13px;line-height:1.9}
+.btn {display:inline-block;padding:14px 23px;background:var(--maroon);color:white;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:.25s}
+.btn:hover {background:var(--maroon-dark);transform:translateY(-2px)}
+.btn-light {background:white;color:var(--maroon);border:1px solid white}
+.btn-light:hover {background:transparent;color:white}
+
+/* HEADER */
+header {
+  height:78px;position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 7%;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);
+}
+.brand {display:flex;align-items:center;gap:11px}
+.brand img {width:45px;height:45px;object-fit:contain}
+.brand strong {font-family:"Barlow Condensed";font-size:23px;color:var(--maroon)}
+.brand small {display:block;font-size:8px;letter-spacing:1.5px;color:var(--gold);font-weight:700}
+nav {display:flex;align-items:center;gap:25px}
+nav a {font-size:10px;font-weight:700;text-transform:uppercase;color:#555}
+nav a:hover {color:var(--maroon)}
+nav .nav-btn {background:var(--maroon);color:white;padding:13px 18px}
+.menu {display:none;background:none;border:0;font-size:25px;color:var(--maroon)}
+
+/* HERO */
+.hero {
+  min-height:590px;display:flex;align-items:center;
+  position:relative;color:white;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(48,12,27,.88),rgba(48,12,27,.53)),
+    url("https://raw.githubusercontent.com/Carrew/Tyneceploh/refs/heads/main/1790247402920.jpg") center/cover;
+}
+.hero-content {width:86%;max-width:1200px;margin:auto;padding:90px 0}
+.hero h1 {font-size:clamp(65px,10vw,115px);line-height:.85;max-width:850px;margin:20px 0}
+.hero h1 span {color:#d6b77e}
+.hero p {max-width:500px;color:#eee;font-size:13px;line-height:1.9;margin-bottom:27px}
+.hero-actions {display:flex;gap:12px;flex-wrap:wrap}
+
+/* VALUES */
+.values {display:grid;grid-template-columns:repeat(3,1fr);background:white;border-bottom:1px solid var(--line)}
+.value {padding:25px 10px;text-align:center;border-right:1px solid var(--line)}
+.value:last-child {border:0}
+.value strong {font-family:"Barlow Condensed";font-size:25px;color:var(--maroon)}
+.value small {display:block;color:var(--muted);font-size:9px;letter-spacing:1px;margin-top:4px}
+
+/* ABOUT */
+.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-image {min-height:340px;background:white;display:grid;place-items:center;border:1px solid var(--line)}
+.about-image img {width:170px;height:170px;object-fit:contain}
+.about-copy p {font-size:13px;color:var(--muted);line-height:2;margin:18px 0}
+.about-copy .btn {margin-top:8px}
+
+/* OBJECTIVES */
+.purpose {background:white}
+.objectives {margin-top:35px;border-top:1px solid var(--line)}
+.objective {display:grid;grid-template-columns:55px 1fr 1.3fr;gap:20px;padding:23px 5px;border-bottom:1px solid var(--line);align-items:center}
+.objective span {font-family:"Barlow Condensed";font-size:27px;color:var(--gold)}
+.objective h3 {font-size:24px;color:var(--maroon)}
+.objective p {font-size:12px;line-height:1.8;color:var(--muted)}
+
+/* MEMBERSHIP */
+.membership-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}
+.member-card {background:white;border:1px solid var(--line);padding:30px}
+.member-card span {font-family:"Barlow Condensed";font-size:32px;color:var(--gold)}
+.member-card h3 {font-size:29px;color:var(--maroon);margin:18px 0 12px}
+.member-card p {font-size:12px;line-height:1.9;color:var(--muted)}
+.member-card a {display:inline-block;margin-top:20px;color:var(--maroon);font-size:10px;font-weight:700;text-transform:uppercase}
+
+/* GOVERNANCE */
+.governance {background:#eeeae2}
+.governance-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}
+.gov-card {background:white;padding:23px;border:1px solid var(--line)}
+.gov-card span {font-size:9px;color:var(--gold);font-weight:700;letter-spacing:1px}
+.gov-card h3 {font-size:23px;color:var(--maroon);margin:13px 0 8px}
+.gov-card p {font-size:11px;line-height:1.8;color:var(--muted)}
+
+/* EDITORIAL */
+.news-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:35px}
+.news-card {background:white;border:1px solid var(--line);padding:27px;display:flex;flex-direction:column;min-height:260px;transition:.25s}
+.news-card:hover {border-color:var(--gold);transform:translateY(-4px)}
+.news-card small {color:var(--gold);font-size:9px;font-weight:700;letter-spacing:1px}
+.news-card h3 {font-size:28px;color:var(--maroon);margin:22px 0 12px}
+.news-card p {font-size:12px;line-height:1.8;color:var(--muted)}
+.news-card strong {margin-top:auto;padding-top:22px;font-size:10px;color:var(--maroon)}
+
+/* CTA */
+.cta {background:var(--maroon);color:white;text-align:center;padding:75px 8%}
+.cta h2 {font-size:clamp(42px,7vw,75px);line-height:.95;margin:15px auto;max-width:800px}
+.cta p {max-width:550px;margin:15px auto 25px;font-size:12px;line-height:1.9;color:#eadde1}
+
+/* FOOTER */
+footer {background:#25131a;color:white;padding:45px 7% 20px}
+.footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:35px}
+footer p,footer a {font-size:11px;color:#c9bfc2;line-height:2}
+footer h3 {font-size:24px;color:white;margin-bottom:12px}
+footer h4 {font-size:10px;color:#d6b77e;letter-spacing:1px;margin-bottom:13px}
+footer a {display:block}
+footer a:hover {color:white}
+.footer-bottom {border-top:1px solid #503641;padding-top:18px;display:flex;justify-content:space-between;font-size:9px;color:#b9aeb2}
+
+/* MOBILE */
+@media(max-width:750px) {
+  header {padding:0 6%;height:70px}
+  .menu {display:block}
+  nav {
+    display:none;position:absolute;top:70px;left:0;width:100%;
+    background:white;padding:18px 7%;flex-direction:column;
+    align-items:stretch;gap:0;border-bottom:1px solid var(--line)
+  }
+  nav.open {display:flex}
+  nav a {padding:14px 0;border-bottom:1px solid var(--line)}
+  nav .nav-btn {text-align:center;margin-top:12px}
+  .hero {min-height:550px}
+  .hero-content {width:88%}
+  .hero h1 {font-size:clamp(62px,14vw,90px)}
+  .container {width:88%}
+  .section {padding:65px 0}
+  .about-grid {grid-template-columns:1fr;gap:30px}
+  .about-image {min-height:260px}
+  .objective {grid-template-columns:38px 1fr;gap:10px}
+  .objective p {grid-column:2}
+  .membership-grid,.governance-grid,.news-grid {grid-template-columns:1fr}
+  .member-card {padding:25px}
+  .footer-grid {grid-template-columns:1fr 1fr}
+  .footer-grid > div:first-child {grid-column:1/-1}
+}
+@media(max-width:420px) {
+  .hero-actions {flex-direction:column;align-items:stretch}
+  .hero-actions .btn {text-align:center}
+  .values .value strong {font-size:20px}
+  .values .value small {font-size:7px}
+  .footer-grid {grid-template-columns:1fr}
+  .footer-grid > div:first-child {grid-column:auto}
+  .footer-bottom {flex-direction:column;gap:8px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="brand">
+    <img src="https://raw.githubusercontent.com/Carrew/Tyneceploh/refs/heads/main/1790247402920.jpg" alt="ULF logo">
+    <span><strong>ULF</strong><small>UNITY · DIGNITY · WELFARE</small></span>
+  </a>
+
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+
+  <nav id="nav">
+    <a href="#about">About</a>
+    <a href="#purpose">Our Purpose</a>
+    <a href="#membership">Membership</a>
+    <a href="html/news.html">Newsroom</a>
+    <a href="html/apply.html" class="nav-btn">Membership</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow" style="color:#e1c58e">THE UNION OF LIBERIAN FOOTBALLERS</span>
+      <h1>THE GAME IS <span>BIGGER</span> THAN THE PITCH.</h1>
+      <p>
+        A collective voice for the rights, dignity, welfare,
+        and professional interests of Liberian footballers.
+        Because the people behind the game matter.
+      </p>
+      <div class="hero-actions">
+        <a href="html/apply.html" class="btn btn-light">Explore Membership</a>
+        <a href="#about" class="btn" style="background:transparent;border-color:white">Discover ULF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="value"><strong>UNITY</strong><small>ONE FOOTBALL COMMUNITY</small></div>
+    <div class="value"><strong>DIGNITY</strong><small>RESPECT FOR MEMBERS</small></div>
+    <div class="value"><strong>WELFARE</strong><small>PEOPLE BEYOND THE GAME</small></div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://raw.githubusercontent.com/Carrew/Tyneceploh/refs/heads/main/1790247402920.jpg" alt="ULF emblem">
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">WHO WE ARE</span>
+        <h2 class="section-title">A UNION BUILT FOR THE GAME.</h2>
+        <p>
+          The Union of Liberian Footballers is a not-for-profit
+          organization established to protect and promote the
+          shared interests of current and former football
+          participants in Liberia.
+        </p>
+        <p>
+          Its constitutional objectives emphasize unity,
+          dignity, welfare, professional growth, integrity,
+          and accountability.
+        </p>
+        <a href="#purpose" class="btn">Discover Our Purpose</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section purpose" id="purpose">
+    <div class="container">
+      <span class="eyebrow">OUR PURPOSE</span>
+      <h2 class="section-title">MORE THAN A FOOTBALL UNION.</h2>
+      <p class="section-intro">
+        The Union's constitution outlines objectives focused
+        on protecting members, supporting professional
+        development, and contributing to football in Liberia.
+      </p>
+
+      <div class="objectives">
+        <div class="objective">
+          <span>01</span><h3>Rights & Representation</h3>
+          <p>Promoting the rights, welfare, and professional interests of current and former Liberian footballers.</p>
+        </div>
+        <div class="objective">
+          <span>02</span><h3>Member Welfare</h3>
+          <p>Supporting objectives relating to social, medical, educational, pension, and emergency assistance.</p>
+        </div>
+        <div class="objective">
+          <span>03</span><h3>Career Development</h3>
+          <p>Encouraging training, career transition, networking, and professional growth.</p>
+        </div>
+        <div class="objective">
+          <span>04</span><h3>Football Development</h3>
+          <p>Contributing to grassroots football and community engagement.</p>
+        </div>
+        <div class="objective">
+          <span>05</span><h3>Good Governance</h3>
+          <p>Promoting transparency, accountability, integrity, and responsible leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="membership">
+    <div class="container">
+      <span class="eyebrow">MEMBERSHIP</span>
+      <h2 class="section-title">ONE UNION. SHARED INTERESTS.</h2>
+      <p class="section-intro">
+        The constitution outlines different membership
+        categories for individuals connected to Liberian football.
+      </p>
+
+      <div class="membership-grid">
+        <article class="member-card">
+          <span>01</span>
+          <h3>Full Members</h3>
+          <p>Active and retired players, coaches, and football administrators who meet the eligibility requirements.</p>
+          <a href="html/apply.html">Explore Membership →</a>
+        </article>
+
+        <article class="member-card">
+          <span>02</span>
+          <h3>Associate Members</h3>
+          <p>Identifiable supporters of football associations or teams who demonstrate passion and contribute.</p>
+          <a href="html/apply.html">Explore Membership →</a>
+        </article>
+
+        <article class="member-card">
+          <span>03</span>
+          <h3>Honorary Members</h3>
+          <p>Notable Liberian football figures, legends, enthusiasts, and benefactors recognized under the constitution.</p>
+          <a href="html/apply.html">Explore Membership →</a>
+        </article>
+      </div>
+      <p style="font-size:10px;color:var(--muted);margin-top:18px;line-height:1.8">
+        Eligibility and membership approval are subject to the Union's constitution and membership review process.
+      </p>
+    </div>
+  </section>
+
+  <section class="section governance">
+    <div class="container">
+      <span class="eyebrow">STRUCTURE & GOVERNANCE</span>
+      <h2 class="section-title">BUILT ON ACCOUNTABILITY.</h2>
+      <p class="section-intro">The constitution establishes structures for oversight, administration, and member participation.</p>
+
+      <div class="governance-grid">
+        <article class="gov-card">
+          <span>01 / DECISION-MAKING</span>
+          <h3>General Assembly</h3>
+          <p>The highest decision-making body of the Union.</p>
+        </article>
+        <article class="gov-card">
+          <span>02 / OVERSIGHT</span>
+          <h3>Advisory Board</h3>
+          <p>An elected body responsible for oversight.</p>
+        </article>
+        <article class="gov-card">
+          <span>03 / ADMINISTRATION</span>
+          <h3>Executive Management</h3>
+          <p>The administrative structure of the Union.</p>
+        </article>
+        <article class="gov-card">
+          <span>04 / SPECIALIZED WORK</span>
+          <h3>Standing Committees</h3>
+          <p>Committees covering welfare, finance, membership, elections, ethics, and records.</p>
+        </article>
+        <article class="gov-card">
+          <span>05 / LOCAL STRUCTURES</span>
+          <h3>Local Chapters</h3>
+          <p>Local structures recognized in the governance framework.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">KNOWLEDGE & PERSPECTIVES</span>
+      <h2 class="section-title">BEYOND THE HEADLINES.</h2>
+      <p class="section-intro">Editorial perspectives on player welfare, unity, and professional development.</p>
+
+      <div class="news-grid">
+        <a class="news-card" href="html/article.html?id=welfare">
+          <small>PLAYER WELFARE · DEMO EDITORIAL</small>
+          <h3>Beyond the Game: Why Player Welfare Matters</h3>
+          <p>Why footballers' interests and futures deserve attention beyond the pitch.</p>
+          <strong>READ EDITORIAL →</strong>
+        </a>
+
+        <a class="news-card" href="html/article.html?id=unity">
+          <small>UNITY · DEMO EDITORIAL</small>
+          <h3>A United Voice for Liberian Footballers</h3>
+          <p>The importance of collective representation and shared interests.</p>
+          <strong>READ EDITORIAL →</strong>
+        </a>
+
+        <a class="news-card" href="html/article.html?id=career">
+          <small>CAREER · DEMO EDITORIAL</small>
+          <h3>Life Beyond the Pitch</h3>
+          <p>Exploring career development and preparation for life after football.</p>
+          <strong>READ EDITORIAL →</strong>
+        </a>
+      </div>
+
+      <p style="margin-top:25px">
+        <a href="html/news.html" class="btn">Visit Newsroom</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <span class="eyebrow" style="color:#dfc18b">THE FUTURE OF LIBERIAN FOOTBALL</span>
+    <h2>THE GAME IS STRONGER WHEN WE STAND TOGETHER.</h2>
+    <p>Unity, dignity, and welfare begin with a shared commitment to the people behind the game.</p>
+    <a href="html/apply.html" class="btn btn-light">Explore Membership</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>ULF</h3>
+      <p>Union of Liberian Footballers.<br>Unity · Dignity · Welfare</p>
+      <p style="margin-top:12px">A collective commitment to the rights, welfare, and professional interests of Liberian football participants.</p>
+    </div>
+    <div>
+      <h4>EXPLORE</h4>
+      <a href="#about">About ULF</a>
+      <a href="#purpose">Our Purpose</a>
+      <a href="#membership">Membership</a>
+      <a href="html/news.html">Newsroom</a>
+    </div>
+    <div>
+      <h4>MEMBERSHIP</h4>
+      <a href="html/apply.html">Membership Information</a>
+      <a href="html/apply.html">Application Demo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Union of Liberian Footballers</span>
+    <span>UNITY · DIGNITY · WELFARE</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("open");
+  menu.textContent = nav.classList.contains("open") ? "×" : "☰";
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menu.textContent = "☰";
+  });
+});
+</script>
+
+</body>
+</html>

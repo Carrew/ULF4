@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsroom | ULF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --white: #fff;
+      --maroon: #701f35;
+      --dark: #4e1425;
+      --gold: #b7955c;
+      --text: #24242a;
+      --muted: #73747a;
+      --line: #e7e2d9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      height: 82px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--maroon);
+    }
+
+    .brand img {
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--maroon);
+    }
+
+    .nav-button {
+      background: var(--maroon);
+      color: white;
+      padding: 13px 20px;
+    }
+
+    .hero {
+      padding: 95px 9%;
+      background: var(--dark);
+      color: white;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font: 800 clamp(65px, 10vw, 110px)/.95 "Barlow Condensed", sans-serif;
+      margin: 20px 0;
+      max-width: 800px;
+    }
+
+    .hero h1 span {
+      color: #d7b981;
+    }
+
+    .hero p:last-child {
+      max-width: 550px;
+      color: #e0d8d8;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .content {
+      padding: 75px 9%;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    .section-heading h2 {
+      font: 700 42px "Barlow Condensed", sans-serif;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .featured {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      background: white;
+      border: 1px solid var(--line);
+      margin-bottom: 75px;
+    }
+
+    .featured-image {
+      min-height: 330px;
+      background:
+        linear-gradient(90deg, #4e1425aa, #4e142522),
+        url("https://raw.githubusercontent.com/Carrew/Tyneceploh/refs/heads/main/1790247402920.jpg")
+        center/cover;
+    }
+
+    .featured-content {
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .category {
+      color: var(--maroon);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .featured h2 {
+      font: 700 43px/1.05 "Barlow Condensed", sans-serif;
+      margin: 17px 0;
+    }
+
+    .featured p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .read-link {
+      display: inline-block;
+      margin-top: 25px;
+      color: var(--maroon);
+      font-size: 11px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 7px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .article-card {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      min-height: 270px;
+    }
+
+    .article-number {
+      color: #d9cbb4;
+      font: 700 45px "Barlow Condensed", sans-serif;
+      margin-bottom: 25px;
+    }
+
+    .article-card h3 {
+      font: 700 27px/1.05 "Barlow Condensed", sans-serif;
+      margin: 13px 0;
+    }
+
+    .article-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .article-card .read-link {
+      margin-top: auto;
+      padding-top: 25px;
+      align-self: flex-start;
+    }
+
+    .demo-note {
+      margin-top: 35px;
+      padding: 17px 20px;
+      background: #eee8dc;
+      border-left: 3px solid var(--gold);
+      color: #625b51;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .cta {
+      background: var(--maroon);
+      color: white;
+      padding: 65px 9%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .cta h2 {
+      font: 700 42px "Barlow Condensed", sans-serif;
+    }
+
+    .cta p {
+      color: #eadde0;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .cta a {
+      background: white;
+      color: var(--maroon);
+      padding: 15px 22px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 30px 9%;
+      background: #fff;
+      color: var(--muted);
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media(max-width: 750px) {
+      header {
+        padding: 0 5%;
+      }
+
+      nav {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      nav a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 6%;
+      }
+
+      .content {
+        padding: 55px 6%;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        min-height: 210px;
+      }
+
+      .featured-content {
+        padding: 28px;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        padding: 50px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      footer {
+        padding: 25px 6%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">
+      <img src="https://raw.githubusercontent.com/Carrew/Tyneceploh/refs/heads/main/1790247402920.jpg" alt="ULF Logo">
+      <span>ULF</span>
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="news.html">Newsroom</a>
+      <a href="apply.html" class="nav-button">Membership</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">ULF • NEWS & PERSPECTIVES</p>
+    <h1>BEYOND THE <span>GAME.</span></h1>
+    <p>
+      Stories, perspectives, and conversations surrounding the
+      welfare, dignity, representation, and development of
+      Liberian footballers.
+    </p>
+  </section>
+
+  <main class="content">
+
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">FEATURED EDITORIAL</p>
+        <h2>THE BIG PICTURE</h2>
+      </div>
+      <p>Ideas that matter beyond the pitch.</p>
+    </div>
+
+    <article class="featured">
+      <div class="featured-image"></div>
+
+      <div class="featured-content">
+        <span class="category">PLAYER WELFARE</span>
+        <h2>BEYOND THE GAME: WHY PLAYER WELFARE MATTERS</h2>
+        <p>
+          Footballers contribute more than performances on the pitch.
+          Their welfare, dignity, and future deserve attention
+          throughout their careers.
+        </p>
+        <a href="article.html?id=welfare" class="read-link">
+          READ ARTICLE →
+        </a>
+      </div>
+    </article>
+
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">EXPLORE OUR EDITORIALS</p>
+        <h2>MORE TO EXPLORE</h2>
+      </div>
+    </div>
+
+    <section class="articles">
+
+      <article class="article-card">
+        <span class="article-number">01</span>
+        <span class="category">UNITY & REPRESENTATION</span>
+        <h3>A UNITED VOICE FOR LIBERIAN FOOTBALLERS</h3>
+        <p>
+          Unity creates a stronger foundation for representation,
+          shared interests, and the development of football in Liberia.
+        </p>
+        <a href="article.html?id=unity" class="read-link">READ ARTICLE →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">02</span>
+        <span class="category">CAREER DEVELOPMENT</span>
+        <h3>LIFE BEYOND THE PITCH</h3>
+        <p>
+          Why professional growth, education, and career preparation
+          should remain important throughout a footballer's journey.
+        </p>
+        <a href="article.html?id=career" class="read-link">READ ARTICLE →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">03</span>
+        <span class="category">GOOD GOVERNANCE</span>
+        <h3>BUILDING TRUST THROUGH ACCOUNTABILITY</h3>
+        <p>
+          Transparency, integrity, and responsible leadership
+          are important foundations for a strong football community.
+        </p>
+        <a href="article.html?id=unity" class="read-link">READ ARTICLE →</a>
+      </article>
+
+    </section>
+
+    <div class="demo-note">
+      <strong>DEMO CONTENT NOTICE:</strong>
+      These articles are illustrative editorial samples created
+      for the proposed ULF website. They are not official news
+      releases, announcements, or reports of completed ULF activities.
+    </div>
+
+  </main>
+
+  <section class="cta">
+    <div>
+      <h2>UNITY. DIGNITY. WELFARE.</h2>
+      <p>A stronger voice for the people behind Liberian football.</p>
+    </div>
+    <a href="apply.html">EXPLORE MEMBERSHIP →</a>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Union of Liberian Footballers</span>
+    <span>Unity, Dignity, and Welfare</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
